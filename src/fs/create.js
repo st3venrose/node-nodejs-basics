@@ -2,7 +2,7 @@ import fs, { promises as fsPromises } from "fs";
 import path from "path";
 
 const create = async () => {
-  const filePath = path.join("./files", "fresh.txt");
+  const filePath = path.normalize("./src/fs/filesfresh.txt");
 
   if (fs.existsSync(filePath)) {
     throw Error("FS operation failed");

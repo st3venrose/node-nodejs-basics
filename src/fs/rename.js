@@ -2,8 +2,8 @@ import fs, { promises as fsPromises } from "fs";
 import path from "path";
 
 const rename = async () => {
-  const sourceFile = path.normalize("files/wrongFilename.txt");
-  const destFile = path.normalize("files/properFilename.md");
+  const sourceFile = path.normalize("./src/fs/files/wrongFilename.txt");
+  const destFile = path.normalize("./src/fs/files/properFilename.md");
 
   if (fs.existsSync(destFile)) {
     throw Error("FS operation failed");

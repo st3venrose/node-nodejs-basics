@@ -2,8 +2,8 @@ import fs, { promises as fsPromises } from "fs";
 import path from "path";
 
 const copy = async () => {
-  const destDirectory = path.normalize("files_copy");
-  const sourceDirectory = path.normalize("files");
+  const sourceDirectory = path.normalize("./src/fs/files");
+  const destDirectory = path.normalize("./src/fs/files_copy");
 
   if (fs.existsSync(destDirectory)) {
     throw Error("FS operation failed");

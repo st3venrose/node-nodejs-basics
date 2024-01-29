@@ -2,7 +2,7 @@ import fs, { promises as fsPromises } from "fs";
 import path from "path";
 
 const remove = async () => {
-  const sourceFile = path.normalize("files/fileToRemove.txt");
+  const sourceFile = path.normalize("./src/fs/files/fileToRemove.txt");
 
   if (!fs.existsSync(sourceFile)) {
     throw Error("FS operation failed");
