@@ -1,5 +1,20 @@
+import fs, { promises as fsPromises } from "fs";
+import path from "path";
+
 const create = async () => {
-    // Write your code here 
+  const filePath = path.join("./files", "fresh.txt");
+
+  if (fs.existsSync(filePath)) {
+    throw Error("FS operation failed");
+  }
+
+  try {
+    const content = "I am fresh and young";
+
+    await fsPromises.writeFile("./files/fresh.txt", content);
+  } catch (err) {
+    console.log(err);
+  }
 };
 
 await create();
