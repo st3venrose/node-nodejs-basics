@@ -1,5 +1,18 @@
+import fs, { promises as fsPromises } from "fs";
+import path from "path";
+
 const remove = async () => {
-    // Write your code here 
+  const sourceFile = path.normalize("./src/fs/files/fileToRemove.txt");
+
+  if (!fs.existsSync(sourceFile)) {
+    throw Error("FS operation failed");
+  }
+
+  try {
+    await fsPromises.unlink(sourceFile);
+  } catch (err) {
+    console.log(err);
+  }
 };
 
 await remove();
